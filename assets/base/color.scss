@@ -1,0 +1,10 @@
+@use '../abstracts/variables.scss' as v;
+
+.text-primary {
+  color: #ffffff !important;
+}
+.text-active {
+    color: v.$active !important;
+}
+
+
