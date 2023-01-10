@@ -8,13 +8,12 @@
           color="#000"
         ></v-progress-circular>
       </v-overlay>
-      <notifications position="top right" />
       <v-app>
         <template>
           <!-- header layout -->
           <HeaderComponent />
           <!-- Content layout -->
-          <v-main>
+          <v-main class="landing">
             <div>
               <nuxt />
             </div>

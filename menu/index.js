@@ -5,22 +5,22 @@ export default [
   },
   {
     name: 'Tentang Desa',
-    url: '/about',
+    url: '/TentangDesa',
   },
   {
     name: 'Berita',
-    url: '/news',
+    url: '/berita',
   },
   {
-      name: 'Event',
-      url: '/event'
+    name: 'Event',
+    url: '/event',
   },
   {
-      name: 'Artikel',
-      url: '/artikel'
+    name: 'Artikel',
+    url: '/artikel',
   },
   {
-      name: 'Kontak',
-      url: '/kontak'
-  }
+    name: 'Kontak',
+    url: '/kontak',
+  },
 ]

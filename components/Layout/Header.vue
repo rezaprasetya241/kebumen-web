@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar app color="primary">
+    <v-app-bar app color="#34835E">
       <v-layout class="headerInfo" justify-space-between>
         <div class="d-flex align-center ml-4">
           <img
@@ -10,7 +10,7 @@
             height="51"
             class="mr-4"
           />
-          <h2 class="fw-bold">KEBUMEN BERIMAN</h2>
+          <h2 class="fw-bold white--text">KEBUMEN BERIMAN</h2>
         </div>
         <v-list class="list">
           <v-list-item-group :value="menus.name" color="text-active">
@@ -25,7 +25,7 @@
                 @click="$router.push(menu.url)"
               >
                 <v-list-item-content
-                  ><v-list-item-title>{{
+                  ><v-list-item-title class="text-primary">{{
                     menu.name
                   }}</v-list-item-title></v-list-item-content
                 >

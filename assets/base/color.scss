@@ -3,8 +3,12 @@
 .text-primary {
   color: #ffffff !important;
 }
-.text-active {
-    color: v.$active !important;
+.text-secondary {
+  color: v.$text-secondary !important;
 }
-
-
+.text-active {
+  color: v.$active !important;
+}
+.primary {
+  background: v.$primary !important;
+}
