@@ -3,11 +3,11 @@
     <v-card class="pa-12 my-8 card-landing rounded-lg">
       <h2 class="text-center">EVENT DESA TERBARU</h2>
       <CardComponent
-        v-for="item in listNews"
+        v-for="item in event"
         :key="item.id"
         :img-address="item.imgUrl"
         :title-news="item.title"
-        :description="item.details.description"
+        :description="item.description"
       ></CardComponent>
     </v-card>
   </v-container>
@@ -55,6 +55,15 @@ export default {
         },
       ],
     }
+  },
+
+  computed: {
+    event() {
+      return this.$store.get('event')
+    },
+  },
+  mounted() {
+    this.$store.dispatch('getEvent')
   },
 }
 </script>

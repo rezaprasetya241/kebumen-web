@@ -24,12 +24,9 @@
 export default {
   name: 'SidebarDashboard',
   data() {
-    return {}
-  },
-  computed: {
-    drawer() {
-      return this.$store.get('drawer')
-    },
+    return {
+      drawer: false,
+    }
   },
 }
 </script>

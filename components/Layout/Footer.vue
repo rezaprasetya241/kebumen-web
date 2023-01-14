@@ -2,7 +2,7 @@
   <div style="background: #34835e !important">
     <v-container>
       <v-row class="px">
-        <v-col cols="6">
+        <v-col cols="12" xs="12" sm="12" md="6" xl="6">
           <div class="d-flex justify-center mt-8">
             <div class="mr-4">
               <img
@@ -15,7 +15,13 @@
             </div>
             <div class="d-flex flex-column justify-center white--text">
               <div>
-                <h1>KEBUMEN BERIMAN</h1>
+                <h1
+                  :style="
+                    $vuetify.breakpoint.xs ? 'font-size: 22px !important' : ''
+                  "
+                >
+                  KEBUMEN BERIMAN
+                </h1>
                 <p>
                   Unggul dalam Mutu Santun dalam Perilaku, Berdasarkan Iman dan
                   Taqwa.
@@ -36,7 +42,14 @@
             </div>
           </div>
         </v-col>
-        <v-col cols="6" class="d-flex flex-column justify-center">
+        <v-col
+          cols="12"
+          xs="12"
+          sm="12"
+          md="6"
+          xl="6"
+          class="d-flex flex-column justify-center"
+        >
           <h2 class="title text-active text-center">Maps</h2>
           <div class="d-flex justify-center">
             <iframe
@@ -58,7 +71,10 @@
       <v-icon class="mx-2" color="white">mdi-twitter</v-icon>
       <v-icon class="mx-2" color="white">mdi-youtube</v-icon>
     </div>
-    <div class="text-center footer py-2">
+    <div
+      class="text-center footer py-2"
+      :style="$vuetify.breakpoint.xs ? 'font-size: 12px !important' : ''"
+    >
       Copyright 2022 • Made With Love by Hey Asaa.
     </div>
   </div>

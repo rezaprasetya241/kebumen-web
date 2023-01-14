@@ -1,6 +1,10 @@
 <template>
   <div>
-    <img :src="imgAddress" width="100%" height="360" />
+    <img
+      :src="imgAddress"
+      width="100%"
+      :height="$vuetify.breakpoint.xs ? 200 : 360"
+    />
     <h2 class="title black--text">{{ titleNews }}</h2>
     <p class="black--text">{{ description }}</p>
   </div>

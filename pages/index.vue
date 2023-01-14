@@ -11,7 +11,11 @@
         <v-row class="fill-height title" align="center" justify="center">
           <div
             class="white--text font-weight-medium"
-            style="font-size: 40px !important"
+            :style="
+              $vuetify.breakpoint.xs
+                ? 'font-size: 22px !important'
+                : 'font-size: 40px !important'
+            "
           >
             {{ item.title }}
           </div>
@@ -20,7 +24,7 @@
     </v-carousel>
     <v-container>
       <v-row>
-        <v-col cols="8">
+        <v-col cols="12" xs="12" sm="12" md="8" xl="8">
           <v-card class="pa-12 card-landing rounded-lg">
             <h2 class="title black--text">POS TERBARU</h2>
             <CardComponent
@@ -33,7 +37,7 @@
             ></CardComponent>
           </v-card>
         </v-col>
-        <v-col cols="4">
+        <v-col cols="12" sm="12" md="4" xl="12">
           <v-card class="pa-12 card-landing rounded-lg">
             <h2 class="text-center title black--text">SAMBUTAN KEPALA DESA</h2>
             <v-img
@@ -41,7 +45,7 @@
               :src="require('~/static/kades 1.svg')"
               alt="Kepala desa"
               width="100%"
-              height="430"
+              :height="$vuetify.breakpoint.xs ? 300 : 430"
             ></v-img>
             <p class="black--text mt-8">
               Assalamualaikum Wr. Wb. <br />Dalam rangka mewujudkan Pemerintahan
@@ -60,11 +64,11 @@
       </v-row>
       <v-card class="pa-12 card-border rounded-lg mt-8">
         <h2 class="title black--text text-center">STRUKTUR KELEMBAGAAN DESA</h2>
-        <div class="d-flex align-center justify-center">
+        <div class="d-flex align-center justify-center struktur">
           <v-img
             class="mr-8"
             :src="require('~/static/strukturDesa.svg')"
-            max-width="420"
+            :max-width="$vuetify.breakpoint.xs ? 250 : 420"
             max-height="100%"
           ></v-img>
           <div class="ml-8">
@@ -198,5 +202,25 @@ export default {
 .btn-icon {
   background: transparent !important;
   padding: 0 !important;
+}
+@media screen and (max-width: 1000px) {
+  .struktur {
+    flex-direction: column !important;
+    /* :deep(.v-img) {
+      margin-right: 0 !important;
+      width: 200px !important;
+    } */
+    h2 {
+      font-size: 16px !important;
+    }
+    p {
+      font-size: 12px !important;
+    }
+
+    .v-list-item__title {
+      text-align: start;
+      font-size: 12px !important;
+    }
+  }
 }
 </style>
