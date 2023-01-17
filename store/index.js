@@ -5,6 +5,8 @@ export const state = () => ({
   berita: [],
   event: [],
   artikel: [],
+  message: '',
+  terbaru: ['hello'],
 })
 
 export const mutations = { ...defaultMutations(state()) }
@@ -18,11 +20,21 @@ export const actions = {
     return this.$axios
       .post(`http://localhost:5000/postNews`, payload)
       .then(() => {
-        console.log('success')
         return true
       })
       .catch((err) => {
-        console.log(err)
+        dispatch('set/message', err.response.data.message)
+        return false
+      })
+  },
+  getTerbaru({ dispatch }) {
+    return this.$axios
+      .get(`http://localhost:5000/getTerbaru`)
+      .then((response) => {
+        dispatch('set/terbaru', response.data)
+        return true
+      })
+      .catch(() => {
         return false
       })
   },

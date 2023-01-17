@@ -18,7 +18,11 @@
           @click.stop="drawer = !drawer"
         ></v-app-bar-nav-icon>
         <v-list class="list">
-          <v-list-item-group :value="menus.name" color="text-active">
+          <v-list-item-group
+            v-model="selectedItem"
+            :value="menus.name"
+            color="transparent"
+          >
             <template>
               <v-list-item
                 v-for="menu in menus"
@@ -29,10 +33,17 @@
                 link
                 @click="$router.push(menu.url)"
               >
-                <v-list-item-content
-                  ><v-list-item-title class="text-primary">{{
-                    menu.name
-                  }}</v-list-item-title></v-list-item-content
+                <!-- class="text-primary" -->
+                <!-- :color="selectedItem === menu.name ? '#FFC72C' : 'white'" -->
+                <v-list-item-content class="pa-4"
+                  ><v-list-item-title
+                    :style="
+                      selectedItem === menu.name
+                        ? 'color: #FFC72C !important'
+                        : 'color: white !important'
+                    "
+                    >{{ menu.name }}</v-list-item-title
+                  ></v-list-item-content
                 >
               </v-list-item>
             </template>
@@ -48,7 +59,11 @@
       style="background: #34835e"
     >
       <v-list nav dense>
-        <v-list-item-group :value="menus.name" color="text-active">
+        <v-list-item-group
+          v-model="selectedItem"
+          :value="menus.name"
+          color="text-active"
+        >
           <v-list-item
             v-for="menu in menus"
             :id="menu.name"
@@ -76,6 +91,7 @@ export default {
   data() {
     return {
       drawer: false,
+      selectedItem: 'Beranda',
     }
   },
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer :value="drawer" app color="#34835E" width="260" dark>
+    <v-navigation-drawer app color="#34835E" width="260" dark>
       <v-layout class="d-flex flex-column align-center justify-center">
         <div class="mt-12 text-center">
           <v-avatar size="72">
