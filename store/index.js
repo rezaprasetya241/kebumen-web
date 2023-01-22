@@ -5,6 +5,9 @@ export const state = () => ({
   berita: [],
   event: [],
   artikel: [],
+  loaderNews: false,
+  loaderEvent: false,
+  loaderArtikel: false,
   message: '',
   terbaru: ['hello'],
 })
@@ -39,35 +42,49 @@ export const actions = {
       })
   },
   getNews({ dispatch }) {
+    dispatch('set/loaderNews', true)
     return this.$axios
       .get(`http://localhost:5000/getNews`)
       .then((response) => {
-        dispatch('set/berita', response.data)
+        setTimeout(() => {
+          /**
+           * Close the Snackbar.
+           */
+          dispatch('set/berita', response.data)
+        }, 3000)
+        dispatch('set/loaderNews', false)
         return true
       })
       .catch(() => {
+        dispatch('set/loaderNews', true)
         return false
       })
   },
   getEvent({ dispatch }) {
+    dispatch('set/loaderEvent', true)
     return this.$axios
       .get(`http://localhost:5000/getEvent`)
       .then((response) => {
         dispatch('set/event', response.data)
+        dispatch('set/loaderEvent', false)
         return true
       })
       .catch(() => {
+        dispatch('set/loaderEvent', false)
         return false
       })
   },
   getArtikel({ dispatch }) {
+    dispatch('set/loaderArtikel', true)
     return this.$axios
       .get(`http://localhost:5000/getArtikel`)
       .then((response) => {
         dispatch('set/artikel', response.data)
+        dispatch('set/loaderArtikel', false)
         return true
       })
       .catch(() => {
+        dispatch('set/loaderArtikel', false)
         return false
       })
   },

@@ -4,13 +4,13 @@
       <v-layout class="headerInfo" justify-space-between>
         <div class="d-flex align-center ml-4 logo">
           <img
-            src="~/static//logo.svg"
+            src="~/static//logo.png"
             alt="Logo Desa"
             width="39"
             height="51"
             class="mr-4"
           />
-          <h2 class="fw-bold white--text">KEBUMEN BERIMAN</h2>
+          <h2 class="fw-bold white--text">WONOREJO II BERSATU</h2>
         </div>
         <v-app-bar-nav-icon
           v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm"

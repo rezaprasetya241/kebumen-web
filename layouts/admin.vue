@@ -10,7 +10,6 @@
       </v-overlay>
       <v-app>
         <template>
-          <Sidebar />
           <v-main class="landing">
             <nuxt />
           </v-main>
@@ -20,8 +19,8 @@
   </div>
 </template>
 <script>
-import Sidebar from '~/components/Layout/Sidebar.vue'
+// import Sidebar from '~/components/Layout/Sidebar.vue'
 
-export default { components: { Sidebar } }
+export default {}
 </script>
 <style scoped></style>

@@ -2,13 +2,23 @@
   <v-container>
     <v-card class="pa-12 my-8 card-landing rounded-lg">
       <h2 class="text-center">EVENT DESA TERBARU</h2>
-      <CardComponent
-        v-for="item in event"
-        :key="item.id"
-        :img-address="item.imgUrl"
-        :title-news="item.title"
-        :description="item.description"
-      ></CardComponent>
+
+      <template v-if="$store.get('loaderEvent')">
+        <v-progress-linear
+          class="mt-5"
+          color="#34835E"
+          indeterminate
+        ></v-progress-linear>
+      </template>
+      <template v-else>
+        <CardComponent
+          v-for="item in event"
+          :key="item.id"
+          :img-address="item.imgUrl"
+          :title-news="item.title"
+          :description="item.description"
+        ></CardComponent>
+      </template>
     </v-card>
   </v-container>
 </template>

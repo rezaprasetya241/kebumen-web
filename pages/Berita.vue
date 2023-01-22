@@ -1,14 +1,20 @@
 <template>
   <v-container>
     <v-card class="pa-12 my-8 card-landing rounded-lg">
-      <h2 class="text-center">BERITA ACARA DESA TERBARU</h2>
-      <CardComponent
-        v-for="item in berita"
-        :key="item.id"
-        :img-address="item.imgUrl"
-        :title-news="item.title"
-        :description="item.description"
-      ></CardComponent>
+      <h2 class="text-center">BERITA ACARA DESA TERBARU1</h2>
+
+      <template v-if="loaderNews">
+        <v-progress-linear color="#34835E" indeterminate></v-progress-linear>
+      </template>
+      <template v-else>
+        <CardComponent
+          v-for="item in berita"
+          :key="item.id"
+          :img-address="item.imgUrl"
+          :title-news="item.title"
+          :description="item.description"
+        ></CardComponent>
+      </template>
     </v-card>
   </v-container>
 </template>
@@ -61,9 +67,17 @@ export default {
     berita() {
       return this.$store.get('berita')
     },
+    loaderNews() {
+      return this.$store.get('loaderNews')
+    },
   },
   mounted() {
     this.$store.dispatch('getNews')
+  },
+  methods: {
+    async getNews() {
+      await this.$store.dispatch('getNews')
+    },
   },
 }
 </script>

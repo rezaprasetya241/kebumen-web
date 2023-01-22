@@ -7,10 +7,10 @@
             <div class="mr-4">
               <img
                 class="mt-3"
-                src="~/static//logo.svg"
+                src="~/static//logo.png"
                 alt="Logo Desa"
-                width="39"
-                height="51"
+                width="60"
+                height="81"
               />
             </div>
             <div class="d-flex flex-column justify-center white--text">
@@ -20,24 +20,23 @@
                     $vuetify.breakpoint.xs ? 'font-size: 22px !important' : ''
                   "
                 >
-                  KEBUMEN BERIMAN
+                  WONOREJO II BERSATU
                 </h1>
                 <p>
-                  Unggul dalam Mutu Santun dalam Perilaku, Berdasarkan Iman dan
-                  Taqwa.
+                  Terwujudnya Wonorejo II Bersatu, Mandiri, Maju dan Sejahtera
                 </p>
               </div>
               <div>
                 <v-icon class="text-active">mdi-map-marker</v-icon>
-                <span>Jl. Karangbolong, Buayan, kebumen 54474</span>
+                <span>Wonorejo II, Gadingsari, Sanden, 55763</span>
               </div>
               <div>
                 <v-icon class="text-active">mdi-email</v-icon>
-                <span>kebumenadem@gmail.com</span>
+                <span>wonorejodua75@gmail.com</span>
               </div>
               <div>
                 <v-icon class="text-active">mdi-phone</v-icon>
-                <span>Telp. (0287) 4760162 </span>
+                <span>Telp. (000) 0000000 </span>
               </div>
             </div>
           </div>

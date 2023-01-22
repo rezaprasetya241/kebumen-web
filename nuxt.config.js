@@ -2,6 +2,10 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  router: {
+    base: '/',
+    middleware: 'authenticated',
+  },
   head: {
     titleTemplate: '%s - desa-kebumen',
     title: 'desa-kebumen',
